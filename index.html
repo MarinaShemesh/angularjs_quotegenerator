@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="quoteApp">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Angular quote app</title>
+</head>
+<body>
+  <div  class="ui container" ng-controller="appController">
+            <div class="column"> 
+               <!--  <div class="ui segment"> -->
+                    <div class="ui vertical segment">
+                        <h1>Developer quotes</h1>
+                    </div>
+                    <div class="ui vertical segment">
+                         <h2>"{{quoteData.quote}}"</h2>
+                    </div>
+                    <div class="ui vertical segment">
+                         <h4>{{quoteData.author}}</h4>
+                    </div>
+                    <div class="ui vertical segment">
+                         <button class="ui inverted button" ng-click="getQuote()">Click for quote</button>
+
+                        <span ng-hide="quoteData.quote.length > 140 || quoteData.quote.length == 0">
+                            <a ng-href="https://twitter.com/intent/tweet?text={{quoteData.quote}} - {{quoteData.author}}"target="_blank">
+                      
+                          <button class="ui primary button">Tweet Quote</button></a>
+                        </span>
+                    </div>
+             
+            </div>
+  </div>
+   <script src="angular.min.js"></script>
+   <script src="app.js"></script>
+</body>
+</html>
